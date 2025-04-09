@@ -16,12 +16,8 @@ import mobile from './mobile.png';
 import webicon from './webicon.png';
 import accessibility from './accessibility.png';
 import yoga from './yoga.png';
-// import ascena from './ascena.png';
-// import ibm from './ibm.png';
-// import cts from './cts.png';
-// import sapient from './sapient.png';
-// import ericsson from './ericsson.jpeg';
-// import nexer from './nexer.png';
+import gautamfelogo from './gautam-fe-logo.png';
+
 
 export const assetsImages = {
     gautam,
@@ -42,12 +38,7 @@ export const assetsImages = {
     webicon,
     accessibility,
     yoga,
-    // ascena,
-    // ibm,
-    // cts,
-    // sapient,
-    // ericsson,
-    // nexer
+    gautamfelogo
 }
 
 export const workData = [

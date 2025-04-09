@@ -3,11 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import { IoMdMail } from "react-icons/io";
 
-const Footer = ({isDarkMode, seIsDarkMode}) => {
+const Footer = ({isDarkMode}) => {
   return (
     <div className='mt-20'>
         <div className='text-center'>
-            <Image src={assetsImages.gautamLogo} alt='' className='w-28 mx-auto mb-2' />
+            <Image src={isDarkMode ? assetsImages.gautamFeLogo: assetsImages.gautamLogo} alt='' className='w-28 mx-auto mb-2' />
             <div className='flex items-center gap-2 mx-auto w-max'>
                 <IoMdMail size={20}/> gautam.govind04@gmail.com
             </div>
