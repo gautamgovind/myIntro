@@ -14,6 +14,7 @@ const Header = () => {
                 src={assetsImages.author}
                 alt='Gautam'
                 className='rounded-full w-32'
+                priority={true}
             />
         </motion.div>
         <motion.h3 initial={{ y: -20, opacity: 0 }} 

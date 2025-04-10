@@ -24,14 +24,15 @@ const Services = () => {
             whileInView={{ y:0, opacity: 1 }} 
             transition={{duration: 0.5, delay: 0.7}}
         >
-            My Services
+            My Experites
         </motion.h2>
         <motion.p className='text-center mx-auto mt-5 mb-12 max-w-2xl font-Ovo'
             initial={{opacity: 0 }} 
             whileInView={{ opacity: 1 }} 
             transition={{duration: 0.6, delay: 0.7}}
         >
-            This is the service section...
+            I have a decade of industrial experience and have worked for multiple industry such as telecom, retail, insurance, healthcare etc. and have 
+            made difference in people life and business. ....... More content
         </motion.p>
 
         <motion.div className="grid md:grid-cols-3 lg:grid-cols-4 grid-template-columns auto-rows-auto gap-6 my-10"

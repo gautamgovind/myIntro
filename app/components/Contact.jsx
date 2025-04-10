@@ -4,29 +4,30 @@ import { FaArrowRight } from "react-icons/fa6";
 import { motion } from "motion/react"
 
 const Contact = () => {
-    const [result, setResult] = useState("")
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+    const [result, setResult] = useState("");
+    
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        setResult("Sending....");
+        const formData = new FormData(event.target);
 
-    formData.append("access_key", "7ccc01ec-0aa7-4990-9c0c-880ad8c77274");
+        formData.append("access_key", "7ccc01ec-0aa7-4990-9c0c-880ad8c77274");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
 
-    const data = await response.json();
+        const data = await response.json();
 
-    if (data.success) {
-      setResult("Form Submitted Successfully");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
-  };
+        if (data.success) {
+            setResult("Form Submitted Successfully");
+            event.target.reset();
+        } else {
+            console.log("Error", data);
+            setResult(data.message);
+        }
+    };
 
   return (
     <motion.div id='contact' 
@@ -65,16 +66,18 @@ const Contact = () => {
             transition={{duration: 0.5, delay: 0.7}}
         >
             <div className='grid md:grid-cols-2 grid-template-columns gap-6 mt-10 mb-8 '>
+                <label htmlFor="name" className="hidden">enter your name</label>
                 <motion.input 
-                    type="text" name='name' 
+                    type="text" name='name' id='name'
                     placeholder='Enter your name' required 
                     className='flex-1 p-3 border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHoveer/30 dark:border-white/90' 
                     initial={{x: -50, opacity: 0 }} 
                     whileInView={{ x: 0, opacity: 1 }} 
                     transition={{duration: 0.5, delay: 1}}
                 />
+                <label htmlFor="email" className="hidden">enter your name</label>
                 <motion.input 
-                    type="email" name='email' 
+                    type="email" name='email' id='email'
                     placeholder='Enter your email' required 
                     className='flex-1 p-3 border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHoveer/30 dark:border-white/90'  
                     initial={{x: -50, opacity: 0 }} 
@@ -82,7 +85,8 @@ const Contact = () => {
                     transition={{duration: 0.6, delay: 1.1}}
                 />
             </div>
-            <motion.textarea row='6' name='message' 
+            <label htmlFor="message" className="hidden">enter your name</label>
+            <motion.textarea row='6' name='message' id='message'
                 placeholder='Enter your message' required  
                 className='w-full p-4 mb-6 border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHoveer/30 dark:border-white/90'
                 initial={{y: 100, opacity: 0 }} 
@@ -98,9 +102,19 @@ const Contact = () => {
                 Submit <FaArrowRight />
             </motion.button>
 
-            <p className='mt-4'>
+            <p className='mt-4'  aria-live='assertive'>
                 {result}
             </p>
+
+            {/* <motion.div className="grid mt-10 mb-8 "
+                initial={{y: 100, opacity: 0 }} 
+                whileInView={{ y: 0, opacity: 1 }} 
+                transition={{duration: 0.5, delay: 1}}  
+            >
+                 
+                <iframe src="https://copilotstudio.microsoft.com/environments/Default-02b6749b-5ce0-4853-bd5c-a05f9bd9dd3a/bots/crbbc_nexerOnboardingAssistant/webchat?__version__=2 " style={{ width: '100%', height: '500px', backgroundColor: 'blue', display: 'flex',  }}></iframe>
+            </motion.div>
+             */}
         </motion.form>
     </motion.div>
   )

@@ -25,13 +25,13 @@ const Navbar = ({isDarkMode, setIsDarkMode}) => {
         */}
         <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] h-28 py-4 flex items-center justify-between z-50 bg-gradient-to-r from-gray-50 to-gray-200 via-gray-100 dark:bg-gradient-to-tl dark:from-[#020024] dark:to-[#181819] dark:via-darkTheme dark:shadow-white/20`}>
             <a href='#top'>
-                <Image src={isDarkMode ? assetsImages.gautamFeLogo: assetsImages.gautamLogo} alt='' className='w-28 cursor-pointer mr-14' />
+                <Image src={isDarkMode ? assetsImages.gautamFeLogo: assetsImages.gautamLogo} alt='' priority={true} className='w-28 cursor-pointer mr-14 rounded-full border dark:border-gray-800' />
             </a>
 
             <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 font-Outfit shadow-sm bg-opacity-50 bg-white  dark:text-white dark:border dark:border-white/50 dark:bg-transparent`}>
                 <li><a href="#top" className=''>Home</a></li>
                 <li><a href="#about">About Me</a></li>
-                <li><a href="#service">Service</a></li>
+                <li><a href="#service">What I do</a></li>
                 <li><a href="#work">My Work</a></li>
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
